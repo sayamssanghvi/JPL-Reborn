@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:padding="16dp"
+    tools:context="com.zodiac.sanghvi.jplreborn.Admin_ScoreCard">
+
+
+    <TextView
+        android:id="@+id/Vs"
+        android:textColor="#f8f8f9"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Team1 Vs Team2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/BatsMen1"
+        android:textColor="#f8f8f9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="TextView"
+        android:layout_below="@+id/textView7"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f8f8f9"
+        android:layout_marginTop="25sp"
+        android:text="Batting  :"
+        android:textSize="17sp"
+        android:layout_below="@+id/Vs"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/Batting"
+        android:gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f8f8f9"
+        android:text="TextView"
+        android:layout_above="@+id/BatsMen1"
+        android:layout_toLeftOf="@+id/textView6"
+        android:layout_toStartOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/BatsMen2"
+        android:textColor="#f8f8f9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BatsMen1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:textColor="#f8f8f9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Bowling  :"
+        android:textSize="17sp"
+        android:layout_below="@+id/BatsMen2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/Bowling"
+        android:textColor="#f8f8f9"
+        android:gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignEnd="@+id/Batting"
+        android:layout_alignRight="@+id/Batting"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/Bowler"
+        android:layout_width="match_parent"
+        android:textColor="#f8f8f9"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="TextView"
+        android:layout_below="@+id/Bowling"
+        android:layout_centerHorizontal="true" />
+
+
+    <EditText
+        android:id="@+id/Runs"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:background="#f8f8f9"
+        android:textSize="35sp"
+        android:padding="9dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:layout_alignTop="@+id/textView9"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/Wickets"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#f8f8f9"
+        android:textSize="35sp"
+        android:padding="9dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:layout_marginRight="27dp"
+        android:layout_marginEnd="27dp"
+        android:layout_alignBaseline="@+id/Runs"
+        android:layout_alignBottom="@+id/Runs"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/Runs"
+        android:layout_alignEnd="@+id/Runs"
+        android:layout_marginBottom="48dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:textColor="#f8f8f9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Overs"
+        android:layout_alignStart="@+id/Overs"
+        android:layout_below="@+id/Overs"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Overs"
+        android:layout_alignRight="@+id/Overs"
+        android:layout_alignEnd="@+id/Overs" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f8f8f9"
+        android:text="Runs"
+        android:layout_below="@+id/Runs"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Wickets"
+        android:layout_alignStart="@+id/Wickets"
+        android:layout_alignTop="@+id/textView6"
+        android:textColor="#f8f8f9"
+        android:text="Wickets"
+        android:gravity="center"
+        android:layout_alignRight="@+id/Wickets"
+        android:layout_alignEnd="@+id/Wickets" />
+
+    <TextView
+        android:id="@+id/Choose"
+        android:textColor="#f8f8f9"
+        android:textSize="10sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Vs"
+        android:text="Sultan Won The Toss And Choose to Bat"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/Overs"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="TextView"
+        android:gravity="center"
+        android:background="#f8f8f9"
+        android:layout_marginTop="71dp"
+        android:layout_below="@+id/Bowler"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4" />
+
+</RelativeLayout>

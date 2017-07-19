@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:theme="@style/Theme.Transparent"
+    >
+
+    <ImageButton
+        android:id="@+id/Vote"
+        android:layout_width="105dp"
+        android:layout_height="170dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="70dp"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/preloading_image"
+        />
+    <ImageButton
+        android:id="@+id/SearchPlayer"
+        android:layout_width="105dp"
+        android:layout_height="170dp"
+        android:background="@color/colorPrimary"
+        android:layout_alignTop="@+id/Vote"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="60dp"
+        android:layout_marginEnd="60dp"
+        android:src="@mipmap/ic_launcher"
+        />
+    <ImageButton
+        android:id="@+id/MostRuns"
+        android:layout_width="105dp"
+        android:layout_height="170dp"
+        android:background="@color/colorPrimary"
+        android:layout_alignTop="@+id/MostWickets"
+        android:layout_alignLeft="@+id/Vote"
+        android:layout_alignStart="@+id/Vote"
+        android:src="@drawable/apps"
+        />
+    <ImageButton
+        android:id="@+id/MostWickets"
+        android:layout_width="105dp"
+        android:layout_height="170dp"
+        android:background="@color/colorPrimary"
+        android:layout_below="@+id/SearchPlayer"
+        android:layout_alignLeft="@+id/SearchPlayer"
+        android:layout_alignStart="@+id/SearchPlayer"
+        android:layout_marginTop="62dp"
+        android:src="@drawable/preloading_image" />
+
+</RelativeLayout>

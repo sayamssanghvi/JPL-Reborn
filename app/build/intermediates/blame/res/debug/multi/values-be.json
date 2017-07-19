@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "/home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-be/values-be.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 204,
+                    "endOffset": 305
+                },
+                "from": {
+                    "file": "/home/Sanghvi/.android/build-cache/0c81db5269f248b26da0bd4f095c0930fc69d6db/output/res/values-be/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 285,
+                        "endColumn": 204,
+                        "endOffset": 489
+                    }
+                }
+            }
+        ]
+    }
+]

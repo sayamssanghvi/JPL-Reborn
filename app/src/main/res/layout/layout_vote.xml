@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:theme="@style/AppTheme"
+    >
+
+    <ImageButton
+        android:id="@+id/Team_1"
+        android:layout_width="125dp"
+        android:layout_height="190dp"
+        android:background="@color/colorPrimary"
+        android:layout_alignTop="@+id/Team_2"
+        android:layout_toRightOf="@+id/Vs"
+        android:layout_toEndOf="@+id/Vs"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp" />
+
+    <ImageButton
+        android:id="@+id/Team_2"
+        android:layout_width="125dp"
+        android:layout_height="190dp"
+        android:background="@color/colorPrimary"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/Vs"
+        android:layout_toStartOf="@+id/Vs"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp" />
+
+    <TextView
+        android:id="@+id/Vs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vs"
+        android:textSize="30sp"
+        android:textColor="#f8f8f9"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Team_1"
+        android:layout_marginBottom="56dp"
+        android:text="Select the Team Icon You Think Will Win Today"
+        android:gravity="center"
+        android:textColor="#f8f8f9"
+        android:textSize="17sp"
+        android:layout_alignLeft="@+id/Team_2"
+        android:layout_alignStart="@+id/Team_2"
+        android:layout_alignRight="@+id/Team_1"
+        android:layout_alignEnd="@+id/Team_1" />
+
+</RelativeLayout>

@@ -1,0 +1,7 @@
+#Sat Jul 15 20:42:10 IST 2017
+base.0=/home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_b111b2bb11860ac27addef163d576485956bec1a
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d4e4f4936b6ab0482f4bef42bda0e5ba0e29cc7d/classes.dex
+base.1=/home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d4e4f4936b6ab0482f4bef42bda0e5ba0e29cc7d
+file.0=/home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_b111b2bb11860ac27addef163d576485956bec1a/classes.dex

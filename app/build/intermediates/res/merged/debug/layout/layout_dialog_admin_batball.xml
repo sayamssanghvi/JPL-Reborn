@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:padding="16dp">
+
+
+    <Button
+        android:id="@+id/Batting"
+        android:textColor="#f8f8f9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Batting"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/Bowling"
+        android:textColor="#f8f8f9"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Batting"
+        android:layout_alignRight="@+id/Batting"
+        android:layout_below="@+id/Batting"
+        android:layout_marginTop="5dp"
+        android:text="Bowling" />
+</RelativeLayout>

@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "111433713549",
+    "firebase_url": "https://friendlychat-5e5c3.firebaseio.com",
+    "project_id": "friendlychat-5e5c3",
+    "storage_bucket": "friendlychat-5e5c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111433713549:android:64e58dacc0483faa",
+        "android_client_info": {
+          "package_name": "com.google.firebase.udacity.friendlychat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111433713549-a2b816fgv134sf68cm9h90nivgvm6uhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkyn7zg8wiHyV16CgiGphyChzdNZ8_T3Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111433713549:android:a239d80b684c82f0",
+        "android_client_info": {
+          "package_name": "com.zodiac.sanghvi.jplreborn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111433713549-a2b816fgv134sf68cm9h90nivgvm6uhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkyn7zg8wiHyV16CgiGphyChzdNZ8_T3Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

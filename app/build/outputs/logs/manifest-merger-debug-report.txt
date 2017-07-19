@@ -1,0 +1,266 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:2:1-31:12
+	package
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:3:5-43
+		INJECTED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml
+		INJECTED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml
+		INJECTED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml
+		INJECTED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml
+application
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:5:5-29:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/Sanghvi/.android/build-cache/da79dc83541376354b810e26a437e649c35846bb/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/Sanghvi/.android/build-cache/7b3d49f547003d60e80e76596616737ffb4f7a6f/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:cardview-v7:25.3.1] /home/Sanghvi/.android/build-cache/ce0bb96b82190324e0e6f7376c8d0365ec735ac9/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/Sanghvi/.android/build-cache/3d1510b4c183288336084a9d599053c7c5c998d9/output/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-core:10.2.6] /home/Sanghvi/.android/build-cache/09edf536197f4f39512b9db06d6dd96ec4ff5a4f/output/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:24:5-33:19
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.6] /home/Sanghvi/.android/build-cache/d541b5dde4fb09bbf9e8f9b62d64eb50628aa43d/output/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:28:5-49:19
+MERGED from [com.google.firebase:firebase-common:10.2.6] /home/Sanghvi/.android/build-cache/08fc4aca62256a334e590d20ffe1206f55366d53/output/AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:10.2.6] /home/Sanghvi/.android/build-cache/37a0daf8f4cd40b778d5bddee1679998ad448258/output/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.2.6] /home/Sanghvi/.android/build-cache/0c81db5269f248b26da0bd4f095c0930fc69d6db/output/AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.3.1] /home/Sanghvi/.android/build-cache/1fff1e19ebecadd495e60e9296857091802e836f/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /home/Sanghvi/.android/build-cache/f8d4f8163b95937d9f5374cf153b3ff241cd7bc4/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/Sanghvi/.android/build-cache/3e5ee5bd0531d4aee17c7ab6e968ba36fa8abc7b/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/Sanghvi/.android/build-cache/4b921fc21234680c76514591b7a572e150d04305/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/Sanghvi/.android/build-cache/7c8b9b7dbd93cee1b6df1c12e2f7cb503e458c5f/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /home/Sanghvi/.android/build-cache/dbd80c59a713256d2973d8fa8eac03d3111f1ce8/output/AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:8:9-41
+	android:supportsRtl
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:10:9-35
+	android:roundIcon
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:9:9-54
+	android:allowBackup
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:6:9-35
+	android:icon
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:7:9-43
+	android:theme
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:11:9-40
+activity#com.zodiac.sanghvi.jplreborn.SearchActivity
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:12:9-52
+	android:name
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:12:19-49
+activity#com.zodiac.sanghvi.jplreborn.SplashActivty
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:13:9-19:20
+	android:name
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:13:19-48
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:14:13-18:29
+action#android.intent.action.MAIN
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:15:17-69
+	android:name
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:15:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:17:17-77
+	android:name
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:17:27-74
+activity#com.zodiac.sanghvi.jplreborn.Menu_Option
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:20:9-49
+	android:name
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:20:19-46
+activity#com.zodiac.sanghvi.jplreborn.PlayerActivity
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:21:9-52
+	android:name
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:21:19-49
+activity#com.zodiac.sanghvi.jplreborn.FeaturesActivity
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:22:9-54
+	android:name
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:22:19-51
+activity#com.zodiac.sanghvi.jplreborn.Admin_Vistor
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:23:9-50
+	android:name
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:23:19-47
+activity#com.zodiac.sanghvi.jplreborn.LoginActivity
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:24:9-51
+	android:name
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:24:19-48
+activity#com.zodiac.sanghvi.jplreborn.Admin_MatchList
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:25:9-53
+	android:name
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:25:19-50
+activity#com.zodiac.sanghvi.jplreborn.Audience_First
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:26:9-52
+	android:name
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:26:19-49
+activity#com.zodiac.sanghvi.jplreborn.Admin_BatBall
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:27:9-51
+	android:name
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:27:19-48
+activity#com.zodiac.sanghvi.jplreborn.Admin_ScoreCard
+ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:28:9-62
+	android:name
+		ADDED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml:28:19-50
+uses-sdk
+INJECTED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:appcompat-v7:25.3.1] /home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/Sanghvi/.android/build-cache/da79dc83541376354b810e26a437e649c35846bb/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/Sanghvi/.android/build-cache/7b3d49f547003d60e80e76596616737ffb4f7a6f/output/AndroidManifest.xml:20:5-43
+MERGED from [com.google.firebase:firebase-database:10.2.6] /home/Sanghvi/.android/build-cache/0924df651b2abb47d2ec4a8b3edc3fa1abe2be38/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-database-connection:10.2.6] /home/Sanghvi/.android/build-cache/eeb76a6bbdb676c935f2cf842a4fcfeebff4d17c/output/AndroidManifest.xml:3:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/Sanghvi/.android/build-cache/5cf176218ec309e4f69f3ae98b92cc821b7fa38b/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:25.3.1] /home/Sanghvi/.android/build-cache/ce0bb96b82190324e0e6f7376c8d0365ec735ac9/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/Sanghvi/.android/build-cache/3d1510b4c183288336084a9d599053c7c5c998d9/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-core:10.2.6] /home/Sanghvi/.android/build-cache/09edf536197f4f39512b9db06d6dd96ec4ff5a4f/output/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.6] /home/Sanghvi/.android/build-cache/d541b5dde4fb09bbf9e8f9b62d64eb50628aa43d/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-common:10.2.6] /home/Sanghvi/.android/build-cache/08fc4aca62256a334e590d20ffe1206f55366d53/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:10.2.6] /home/Sanghvi/.android/build-cache/37a0daf8f4cd40b778d5bddee1679998ad448258/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:10.2.6] /home/Sanghvi/.android/build-cache/0c81db5269f248b26da0bd4f095c0930fc69d6db/output/AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:25.3.1] /home/Sanghvi/.android/build-cache/1fff1e19ebecadd495e60e9296857091802e836f/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] /home/Sanghvi/.android/build-cache/f8d4f8163b95937d9f5374cf153b3ff241cd7bc4/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/Sanghvi/.android/build-cache/3e5ee5bd0531d4aee17c7ab6e968ba36fa8abc7b/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/Sanghvi/.android/build-cache/4b921fc21234680c76514591b7a572e150d04305/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/Sanghvi/.android/build-cache/7c8b9b7dbd93cee1b6df1c12e2f7cb503e458c5f/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] /home/Sanghvi/.android/build-cache/dbd80c59a713256d2973d8fa8eac03d3111f1ce8/output/AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml
+		INJECTED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml
+		INJECTED from /home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/src/main/AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:25.3.1] /home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/Sanghvi/.android/build-cache/da79dc83541376354b810e26a437e649c35846bb/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/Sanghvi/.android/build-cache/7b3d49f547003d60e80e76596616737ffb4f7a6f/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/Sanghvi/.android/build-cache/5cf176218ec309e4f69f3ae98b92cc821b7fa38b/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:cardview-v7:25.3.1] /home/Sanghvi/.android/build-cache/ce0bb96b82190324e0e6f7376c8d0365ec735ac9/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] /home/Sanghvi/.android/build-cache/1fff1e19ebecadd495e60e9296857091802e836f/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] /home/Sanghvi/.android/build-cache/f8d4f8163b95937d9f5374cf153b3ff241cd7bc4/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /home/Sanghvi/.android/build-cache/3e5ee5bd0531d4aee17c7ab6e968ba36fa8abc7b/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /home/Sanghvi/.android/build-cache/4b921fc21234680c76514591b7a572e150d04305/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /home/Sanghvi/.android/build-cache/7c8b9b7dbd93cee1b6df1c12e2f7cb503e458c5f/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] /home/Sanghvi/.android/build-cache/dbd80c59a713256d2973d8fa8eac03d3111f1ce8/output/AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:appcompat-v7:25.3.1] /home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/AndroidManifest.xml:26:9-47
+uses-permission#android.permission.INTERNET
+ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.6] /home/Sanghvi/.android/build-cache/d541b5dde4fb09bbf9e8f9b62d64eb50628aa43d/output/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:20:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.6] /home/Sanghvi/.android/build-cache/d541b5dde4fb09bbf9e8f9b62d64eb50628aa43d/output/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:21:22-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.6] /home/Sanghvi/.android/build-cache/d541b5dde4fb09bbf9e8f9b62d64eb50628aa43d/output/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:22:22-65
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.6] /home/Sanghvi/.android/build-cache/d541b5dde4fb09bbf9e8f9b62d64eb50628aa43d/output/AndroidManifest.xml:25:7-26:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:25:90-112
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:25:113-137
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:25:17-89
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:27:7-31:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:27:162-184
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:27:105-161
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:27:17-104
+intent-filter#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:28:11-30:27
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:29:15-76
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:29:23-74
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.6] /home/Sanghvi/.android/build-cache/d541b5dde4fb09bbf9e8f9b62d64eb50628aa43d/output/AndroidManifest.xml:27:7-137
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:32:88-110
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:32:111-135
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:10.2.6] /home/Sanghvi/.android/build-cache/a7c1e2a788f04ae9340d674f1d63c0ae8013f10e/output/AndroidManifest.xml:32:16-87
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:22:5-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:22:22-79
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:24:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:26:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:30:9-35:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:30:85-108
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:30:109-169
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:30:19-84
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:31:13-34:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:32:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:32:25-78
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:33:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:33:27-58
+receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:39:9-119
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:39:93-117
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:39:19-92
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:43:9-47:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:43:83-106
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:43:18-82
+intent-filter#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:44:13-46:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:44:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:45:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:10.2.6] /home/Sanghvi/.android/build-cache/b68c12023fbbe4b5c01f64ac50cba04a8e53397f/output/AndroidManifest.xml:45:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:10.2.6] /home/Sanghvi/.android/build-cache/08fc4aca62256a334e590d20ffe1206f55366d53/output/AndroidManifest.xml:6:9-194
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:10.2.6] /home/Sanghvi/.android/build-cache/08fc4aca62256a334e590d20ffe1206f55366d53/output/AndroidManifest.xml:6:19-78
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:10.2.6] /home/Sanghvi/.android/build-cache/08fc4aca62256a334e590d20ffe1206f55366d53/output/AndroidManifest.xml:6:144-168
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:10.2.6] /home/Sanghvi/.android/build-cache/08fc4aca62256a334e590d20ffe1206f55366d53/output/AndroidManifest.xml:6:169-192
+	android:name
+		ADDED from [com.google.firebase:firebase-common:10.2.6] /home/Sanghvi/.android/build-cache/08fc4aca62256a334e590d20ffe1206f55366d53/output/AndroidManifest.xml:6:79-143
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:10.2.6] /home/Sanghvi/.android/build-cache/0c81db5269f248b26da0bd4f095c0930fc69d6db/output/AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:10.2.6] /home/Sanghvi/.android/build-cache/0c81db5269f248b26da0bd4f095c0930fc69d6db/output/AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:10.2.6] /home/Sanghvi/.android/build-cache/0c81db5269f248b26da0bd4f095c0930fc69d6db/output/AndroidManifest.xml:20:20-65
