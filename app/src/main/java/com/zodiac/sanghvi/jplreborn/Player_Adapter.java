@@ -16,10 +16,10 @@ import java.util.List;
 public class Player_Adapter extends RecyclerView.Adapter<Player_Adapter.Player_ViewHolder>
 {
     LayoutInflater inflater;
-    List<Player_Name> data= Collections.emptyList();
+    List<String> data= Collections.emptyList();
     Player_Comm player_comm;
 
-    public Player_Adapter(Context context,List<Player_Name> data)
+    public Player_Adapter(Context context,List<String> data)
     {
         this.data=data;
         this.inflater=LayoutInflater.from(context);
@@ -36,8 +36,8 @@ public class Player_Adapter extends RecyclerView.Adapter<Player_Adapter.Player_V
     @Override
     public void onBindViewHolder(Player_ViewHolder holder, int position)
     {
-        Player_Name current=data.get(position);
-        holder.Player_Name.setText(current.Name);
+        String current=data.get(position);
+        holder.String.setText(current);
     }
 
     public void setItemClicked(Player_Comm player_comm)
@@ -53,12 +53,12 @@ public class Player_Adapter extends RecyclerView.Adapter<Player_Adapter.Player_V
 
     class Player_ViewHolder extends RecyclerView.ViewHolder
     {
-        TextView Player_Name;
+        TextView String;
 
         public Player_ViewHolder(View itemView)
         {
             super(itemView);
-            Player_Name= (TextView) itemView.findViewById(R.id.Player_Name);
+            String= (TextView) itemView.findViewById(R.id.PlayerName);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v)
@@ -72,7 +72,7 @@ public class Player_Adapter extends RecyclerView.Adapter<Player_Adapter.Player_V
                 public boolean onLongClick(View v)
                 {
                     player_comm.ItemLongClicked(getAdapterPosition());
-                    return false;
+                    return true;
                 }
             });
         }

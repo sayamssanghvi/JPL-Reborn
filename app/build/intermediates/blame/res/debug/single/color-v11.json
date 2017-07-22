@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
-        "source": "/home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+        "merged": "/home/Sanghvi/AndroidStudioProjects/JPL-Reborn/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "/home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
-        "source": "/home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+        "merged": "/home/Sanghvi/AndroidStudioProjects/JPL-Reborn/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
     }
 ]

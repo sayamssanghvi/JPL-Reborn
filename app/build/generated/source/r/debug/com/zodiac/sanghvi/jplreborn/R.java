@@ -2463,13 +2463,13 @@ containing a value of this type.
         public static final int Menu=0x7f0b0087;
         public static final int MostRuns=0x7f0b0092;
         public static final int MostWickets=0x7f0b0093;
-        public static final int Overs=0x7f0b0080;
+        public static final int Overs=0x7f0b0084;
         public static final int PImg=0x7f0b009e;
         public static final int PName=0x7f0b009f;
         public static final int PlayerName=0x7f0b0098;
         public static final int Player_Name=0x7f0b009d;
         public static final int Player_Rv=0x7f0b008a;
-        public static final int Runs=0x7f0b0081;
+        public static final int Runs=0x7f0b0080;
         public static final int Score=0x7f0b008b;
         public static final int SearchPlayer=0x7f0b0091;
         public static final int Search_RV=0x7f0b008f;
@@ -2483,7 +2483,7 @@ containing a value of this type.
         public static final int Title=0x7f0b0094;
         public static final int Vote=0x7f0b0090;
         public static final int Vs=0x7f0b0063;
-        public static final int Wickets=0x7f0b0082;
+        public static final int Wickets=0x7f0b0081;
         public static final int action0=0x7f0b00a8;
         public static final int action_bar=0x7f0b0050;
         public static final int action_bar_activity_content=0x7f0b0000;
@@ -2511,7 +2511,7 @@ containing a value of this type.
         public static final int basic=0x7f0b0010;
         public static final int beginning=0x7f0b0023;
         public static final int bottom=0x7f0b002b;
-        public static final int button2=0x7f0b0083;
+        public static final int button2=0x7f0b0082;
         public static final int buttonPanel=0x7f0b0037;
         public static final int cancel_action=0x7f0b00a9;
         public static final int cardView=0x7f0b008d;
@@ -2606,7 +2606,7 @@ containing a value of this type.
         public static final int textView=0x7f0b0097;
         public static final int textView2=0x7f0b00a4;
         public static final int textView3=0x7f0b0067;
-        public static final int textView4=0x7f0b0084;
+        public static final int textView4=0x7f0b0083;
         public static final int textView5=0x7f0b007d;
         public static final int textView6=0x7f0b007b;
         public static final int textView7=0x7f0b0079;
@@ -2666,7 +2666,7 @@ containing a value of this type.
         public static final int activity_login=0x7f04001f;
         public static final int layout_dialog_admin_batball=0x7f040020;
         public static final int layout_dialog_admin_scorecard=0x7f040021;
-        public static final int layout_dialog_setscore_admin_scorecard=0x7f040022;
+        public static final int layout_dialog_admin_scorecard_setscore =0x7f040022;
         public static final int layout_features=0x7f040023;
         public static final int layout_main=0x7f040024;
         public static final int layout_menu_option=0x7f040025;

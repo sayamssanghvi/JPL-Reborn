@@ -1,18 +1,18 @@
 [
     {
-        "merged": "/home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
-        "source": "/home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/res/layout-v21/notification_template_custom_big.xml"
+        "merged": "/home/Sanghvi/AndroidStudioProjects/JPL-Reborn/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/res/layout-v21/notification_template_icon_group.xml"
     },
     {
-        "merged": "/home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
-        "source": "/home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/res/layout-v21/notification_action_tombstone.xml"
-    },
-    {
-        "merged": "/home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "merged": "/home/Sanghvi/AndroidStudioProjects/JPL-Reborn/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
         "source": "/home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/res/layout-v21/notification_action.xml"
     },
     {
-        "merged": "/home/Sanghvi/AndroidStudioProjects/JPL(Reborn)/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
-        "source": "/home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/res/layout-v21/notification_template_icon_group.xml"
+        "merged": "/home/Sanghvi/AndroidStudioProjects/JPL-Reborn/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/Sanghvi/AndroidStudioProjects/JPL-Reborn/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/Sanghvi/.android/build-cache/57f3d299d9d641205dfc7d1de2acf500c2552776/output/res/layout-v21/notification_action_tombstone.xml"
     }
 ]

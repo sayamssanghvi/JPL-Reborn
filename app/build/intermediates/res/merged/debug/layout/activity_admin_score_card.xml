@@ -82,10 +82,10 @@
         android:gravity="left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:layout_alignBottom="@+id/textView5"
-        android:layout_alignLeft="@+id/Batting"
-        android:layout_alignStart="@+id/Batting" />
+        android:layout_alignEnd="@+id/Batting"
+        android:layout_alignRight="@+id/Batting"
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/Bowler"
@@ -97,21 +97,6 @@
         android:layout_below="@+id/Bowling"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/Overs"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#f8f8f9"
-        android:textSize="35sp"
-        android:text="20"
-        android:padding="9dp"
-        android:layout_marginTop="74dp"
-        android:layout_below="@+id/Bowler"
-        android:layout_toLeftOf="@+id/Bowling"
-        android:layout_toStartOf="@+id/Bowling"
-        android:layout_marginLeft="27dp"
-        android:layout_marginStart="27dp" />
-
 
     <EditText
         android:id="@+id/Runs"
@@ -122,9 +107,7 @@
         android:padding="9dp"
         android:ems="10"
         android:inputType="numberSigned"
-        android:layout_alignBaseline="@+id/Overs"
-        android:layout_alignBottom="@+id/Overs"
-        android:layout_centerHorizontal="true" />
+        />
 
     <EditText
         android:id="@+id/Wickets"
@@ -163,17 +146,17 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="Overs"
-        android:layout_alignRight="@+id/Overs"
-        android:layout_alignEnd="@+id/Overs" />
+        />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#f8f8f9"
-        android:layout_alignBottom="@+id/textView4"
+        android:text="Runs"
+        android:layout_below="@+id/Runs"
         android:layout_centerHorizontal="true"
-        android:text="Runs" />
+        android:layout_marginTop="18dp" />
 
     <TextView
         android:id="@+id/textView8"
@@ -185,8 +168,7 @@
         android:textColor="#f8f8f9"
         android:text="Wickets"
         android:gravity="center"
-        android:layout_alignRight="@+id/Wickets"
-        android:layout_alignEnd="@+id/Wickets" />
+        />
 
     <TextView
         android:id="@+id/Choose"
@@ -199,5 +181,18 @@
         android:text="Sultan Won The Toss And Choose to Bat"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/Overs"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:text="TextView"
+        android:gravity="center"
+        android:background="#f8f8f9"
+        android:layout_marginTop="71dp"
+        android:layout_below="@+id/Bowler"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4"
+        />
 
 </RelativeLayout>
