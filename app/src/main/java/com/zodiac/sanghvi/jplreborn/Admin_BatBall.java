@@ -23,7 +23,7 @@ import com.squareup.picasso.Picasso;
 public class Admin_BatBall extends AppCompatActivity
 {
     ImageButton Img_Team1,Img_Team2;
-    String team1,team2,Batting_St,Toss;
+    String team1,team2;
     TextView Team1,Team2;
     Bat_Bowl bat_bowl;
     final Context context=this;
