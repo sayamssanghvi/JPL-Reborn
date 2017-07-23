@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
     android:background="@color/colorPrimaryDark"
 
     >
@@ -14,10 +16,20 @@
         android:ems="10"
         android:textSize="45sp"
         android:padding="12dp"
-        android:text="55"
         android:inputType="numberSigned"
         android:background="#f8f8f9"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp" />
+
+    <Button
+        android:id="@+id/Ok"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:background="#f8f8f9"
+        tools:text="@android:string/yes"
+        android:layout_below="@+id/Score"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

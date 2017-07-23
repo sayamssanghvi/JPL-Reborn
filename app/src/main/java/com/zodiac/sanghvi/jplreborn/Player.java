@@ -132,10 +132,11 @@ class Player_Stats
 
 class Bat_Bowl
 {
-    static String Batting,Bowling,Toss,Choose;
+    static String Batting,Bowling,Toss,Choose,Won;
 }
 
-class Player_Name
+class Game_play
 {
-    String Name;
+    int Runs;
+    String Wickets;
 }

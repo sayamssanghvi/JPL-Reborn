@@ -27,7 +27,7 @@
         android:textColor="#f8f8f9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Choose a BatsMen"
         android:paddingTop="18dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/textView7" />
@@ -64,7 +64,7 @@
         android:layout_centerHorizontal="true"
         android:paddingTop="10dp"
         android:paddingBottom="18dp"
-        android:text="TextView" />
+        android:text="Choose a BatsMen" />
 
     <TextView
         android:id="@+id/textView5"
@@ -94,7 +94,7 @@
         android:textColor="#f8f8f9"
         android:layout_height="wrap_content"
         android:paddingTop="18dp"
-        android:text="TextView"
+        android:text="Choose A Bowler"
         android:layout_below="@+id/Bowling"
         android:layout_centerHorizontal="true" />
 
@@ -128,7 +128,7 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/NextOver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next Over"
@@ -200,7 +200,7 @@
         android:padding="9dp"
         android:background="#f8f8f9"
         android:layout_marginBottom="60dp"
-        android:layout_above="@+id/button2"
+        android:layout_above="@+id/NextOver"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="29dp"
