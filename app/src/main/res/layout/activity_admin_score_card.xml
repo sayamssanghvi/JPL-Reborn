@@ -206,13 +206,7 @@
         android:layout_marginLeft="29dp"
         android:layout_marginStart="29dp" />
 
-    <fragment
-        android:id="@+id/List"
-        android:name="android.support.v4.app.Fragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+
 
     <Button
         android:id="@+id/NextInnings"
@@ -222,6 +216,15 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:text="Next Innings" />
+
+    <fragment
+        android:id="@+id/List"
+        android:name="com.zodiac.sanghvi.jplreborn.Frag_ScoreCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        tools:layout="@layout/layout_frag_admin_scorecard" />
 
 
 </RelativeLayout>

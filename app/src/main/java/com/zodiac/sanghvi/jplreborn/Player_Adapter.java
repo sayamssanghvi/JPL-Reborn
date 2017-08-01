@@ -2,6 +2,7 @@ package com.zodiac.sanghvi.jplreborn;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +16,9 @@ import java.util.List;
 
 public class Player_Adapter extends RecyclerView.Adapter<Player_Adapter.Player_ViewHolder>
 {
-    LayoutInflater inflater;
-    List<String> data= Collections.emptyList();
-    Player_Comm player_comm;
+    private LayoutInflater inflater;
+    private List<String> data= Collections.emptyList();
+    private Player_Comm player_comm;
 
     public Player_Adapter(Context context,List<String> data)
     {
@@ -29,15 +30,14 @@ public class Player_Adapter extends RecyclerView.Adapter<Player_Adapter.Player_V
     public Player_ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
         View v=inflater.inflate(R.layout.layout_rv_player,parent,false);
-        Player_ViewHolder viewHolder =new Player_ViewHolder(v);
-        return viewHolder;
+        return new Player_ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(Player_ViewHolder holder, int position)
     {
         String current=data.get(position);
-        holder.String.setText(current);
+        holder.PName.setText(current);
     }
 
     public void setItemClicked(Player_Comm player_comm)
@@ -48,17 +48,17 @@ public class Player_Adapter extends RecyclerView.Adapter<Player_Adapter.Player_V
     @Override
     public int getItemCount()
     {
-        return data.size();
+            return data.size();
     }
 
     class Player_ViewHolder extends RecyclerView.ViewHolder
     {
-        TextView String;
+        TextView PName;
 
         public Player_ViewHolder(View itemView)
         {
             super(itemView);
-            String= (TextView) itemView.findViewById(R.id.PlayerName);
+            PName= (TextView) itemView.findViewById(R.id.PlayerName);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v)

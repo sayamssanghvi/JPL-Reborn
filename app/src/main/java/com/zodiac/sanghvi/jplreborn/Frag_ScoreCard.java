@@ -1,5 +1,6 @@
 package com.zodiac.sanghvi.jplreborn;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -23,6 +24,14 @@ public class Frag_ScoreCard extends Fragment implements com.zodiac.sanghvi.jplre
     String current;
     Bundle getData;
     Frag_Comm frag_Comm;
+    Context context;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context=context;
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
@@ -30,9 +39,10 @@ public class Frag_ScoreCard extends Fragment implements com.zodiac.sanghvi.jplre
         View v=inflater.inflate(R.layout.layout_frag_admin_scorecard,container,false);
 
         getData=getArguments();
-        data=getData.getStringArrayList("Data");
+        if(getData!=null)
+             data=getData.getStringArrayList("Data");
         Player_Rv= (RecyclerView) v.findViewById(R.id.Player_Rv);
-        Player_Adapter=new Player_Adapter(getContext(),data);
+        Player_Adapter = new Player_Adapter(context, data);
         Player_Rv.setAdapter(Player_Adapter);
         Player_Rv.setLayoutManager(new LinearLayoutManager(getContext()));
         Player_Adapter.setItemClicked(this);

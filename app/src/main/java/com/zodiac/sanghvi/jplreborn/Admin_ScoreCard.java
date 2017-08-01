@@ -2,24 +2,21 @@ package com.zodiac.sanghvi.jplreborn;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.os.PersistableBundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.io.StreamCorruptedException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,17 +24,13 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
 
     TextView Overs,Vs,Batting,Bowling,BatsMen1,BatsMen2,Bowler,Choose;
     Button NextOver,NextInnings;
-    ArrayList<String> data;
+    private ArrayList<String> data;
     EditText Runs,Wickets;
     boolean Innings=false;
     boolean[] MatchOver = {false};
     Context context=this;
     String team1,team2;
     int overs=1,Target;
-
-    FragmentTransaction fragmentTransaction;
-    FragmentManager fragmentManager;
-    Frag_ScoreCard Frag_ScoreCard;
 
     ValueEventListener valueEventListener;
     DatabaseReference databaseReference;
@@ -55,6 +48,8 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
     {
         super.onBackPressed();
         SaveDataMethod();
+        if (MatchOver[0])
+            finish();
     }
 
     @Override
@@ -82,20 +77,14 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
         Runs= (EditText) findViewById(R.id.Runs);
         Vs= (TextView) findViewById(R.id.Vs);
 
-        fragmentManager=getSupportFragmentManager();
-        fragmentTransaction=fragmentManager.beginTransaction();
-
         team1=getIntent().getStringExtra("Team1");
         team2=getIntent().getStringExtra("Team2");
         Overs.setText(String.valueOf(overs));
         Batting.setText(Bat_Bowl.Batting);
         Bowling.setText(Bat_Bowl.Bowling);
         data=new ArrayList<>();
-
         Vs.setText(team1+"  "+"Vs"+"  "+team2);
-
         Choose.setText(Bat_Bowl.Toss +" "+"Won the toss and Choose to"+" "+ Bat_Bowl.Choose);
-
         NextOver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -103,7 +92,6 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
                 NextOver();
             }
         });
-
         NextInnings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -111,19 +99,16 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
                 NextInnings();
             }
         });
-
         BatsMen1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {BatBowl(Bat_Bowl.Batting,"BastMen1");}
         });
-
         BatsMen2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {BatBowl(Bat_Bowl.Batting,"BastMen2");
             }
         });
-
         Bowler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,7 +121,6 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
     @Override
     public void ItemUsed(final String current, final String Who, String Clicked)
     {
-
         if (Clicked.equals("Clicked"))
         {
             switch (Who)
@@ -182,10 +166,11 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
         }
     }
 
-    private ArrayList<String> getData(final String Calling)
+    private void getData(final String Calling)
     {
         final ArrayList<String> Players= new ArrayList<>();
-
+        if(data!=null)
+            data.clear();
         valueEventListener=new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
@@ -209,38 +194,25 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
             data.add(Names);
         }
         Players.clear();
-        return data;
+        Log.d("Sayam",""+data.size());
     }
 
     public void BatBowl(String Calling,String Who)
     {
         getData(Calling);
+        FragmentTransaction fragmentTransaction;
+        FragmentManager fragmentManager;
+        Frag_ScoreCard Frag_ScoreCard;
+        fragmentManager=getSupportFragmentManager();
+        fragmentTransaction=fragmentManager.beginTransaction();
         Frag_ScoreCard=new Frag_ScoreCard();
         Bundle bundle=new Bundle();
-        bundle.putStringArrayList("Data",data);
+        if(data.size()>0)
+             bundle.putStringArrayList("Data",data);
         bundle.putString("Who",Who);
         Frag_ScoreCard.setArguments(bundle);
         fragmentTransaction.add(R.id.ScoreCard,Frag_ScoreCard);
         fragmentTransaction.commit();
-    }
-
-    public void SaveDataMethod()
-    {
-        final Dialog Confirm=new Dialog(context);
-        Confirm.setContentView(R.layout.layout_dialog_admin_scorecard_confirm);
-        TextView Message= (TextView) Confirm.findViewById(R.id.Message);
-        Button Yes= (Button) Confirm.findViewById(R.id.Yes);
-        Message.setText("Are you sure you  want to QUIT the MATCH?");
-        Yes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                MatchOver[0] =true;
-                Confirm.dismiss();
-            }
-        });
-        if (MatchOver[0])
-            finish();
     }
 
     public void NextInnings()
@@ -326,5 +298,22 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
             Overs.setText(String.valueOf(overs));
 
         }
+    }
+
+    public void SaveDataMethod()
+    {
+        final Dialog Confirm=new Dialog(context);
+        Confirm.setContentView(R.layout.layout_dialog_admin_scorecard_confirm);
+        TextView Message= (TextView) Confirm.findViewById(R.id.Message);
+        Button Yes= (Button) Confirm.findViewById(R.id.Yes);
+        Message.setText("Are you sure you  want to QUIT the MATCH?");
+        Yes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                MatchOver[0] =true;
+                Confirm.dismiss();
+            }
+        });
     }
 }
