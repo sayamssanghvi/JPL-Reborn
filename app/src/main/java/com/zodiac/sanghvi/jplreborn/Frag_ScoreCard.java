@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,9 +21,9 @@ public class Frag_ScoreCard extends Fragment implements com.zodiac.sanghvi.jplre
 {
     RecyclerView Player_Rv;
     Player_Adapter Player_Adapter;
-    ArrayList<String> data;
+    ArrayList<String> data=new ArrayList<>();
     String current;
-    Bundle getData;
+    Bundle getData=new Bundle();
     Frag_Comm frag_Comm;
     Context context;
 
@@ -39,8 +40,12 @@ public class Frag_ScoreCard extends Fragment implements com.zodiac.sanghvi.jplre
         View v=inflater.inflate(R.layout.layout_frag_admin_scorecard,container,false);
 
         getData=getArguments();
-        if(getData!=null)
-             data=getData.getStringArrayList("Data");
+        data=getData.getStringArrayList("Data");
+        if(data.size()==0)
+        {
+            Log.d("Sayam","Oh k data is null");
+            getActivity().getSupportFragmentManager().beginTransaction().detach(this).remove(this).commit();
+        }
         Player_Rv= (RecyclerView) v.findViewById(R.id.Player_Rv);
         Player_Adapter = new Player_Adapter(context, data);
         Player_Rv.setAdapter(Player_Adapter);

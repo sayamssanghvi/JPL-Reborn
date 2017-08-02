@@ -137,6 +137,5 @@ class Bat_Bowl
 
 class Game_play
 {
-    int Runs;
-    String Wickets;
+    int Runs,Wickets;
 }

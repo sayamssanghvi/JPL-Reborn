@@ -25,12 +25,17 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
     TextView Overs,Vs,Batting,Bowling,BatsMen1,BatsMen2,Bowler,Choose;
     Button NextOver,NextInnings;
     private ArrayList<String> data;
+    List<Game_play> game_plays;
     EditText Runs,Wickets;
     boolean Innings=false;
     boolean[] MatchOver = {false};
     Context context=this;
     String team1,team2;
     int overs=1,Target;
+
+    FragmentTransaction fragmentTransaction;
+    FragmentManager fragmentManager;
+    Frag_ScoreCard Frag_ScoreCard;
 
     ValueEventListener valueEventListener;
     DatabaseReference databaseReference;
@@ -63,6 +68,10 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
         firebaseDatabase=FirebaseDatabase.getInstance();
         databaseReference=firebaseDatabase.getReference();
 
+        Frag_ScoreCard=new Frag_ScoreCard();
+        fragmentManager=getSupportFragmentManager();
+        fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.ScoreCard,Frag_ScoreCard);
 
         NextInnings= (Button) findViewById(R.id.NextInnings);
         BatsMen1= (TextView) findViewById(R.id.BatsMen1);
@@ -83,6 +92,7 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
         Batting.setText(Bat_Bowl.Batting);
         Bowling.setText(Bat_Bowl.Bowling);
         data=new ArrayList<>();
+        game_plays=new ArrayList<>();
         Vs.setText(team1+"  "+"Vs"+"  "+team2);
         Choose.setText(Bat_Bowl.Toss +" "+"Won the toss and Choose to"+" "+ Bat_Bowl.Choose);
         NextOver.setOnClickListener(new View.OnClickListener() {
@@ -111,7 +121,9 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
         });
         Bowler.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
+                getData(Bat_Bowl.Bowling);
                 BatBowl(Bat_Bowl.Bowling,"Bowler");
             }
         });
@@ -166,11 +178,20 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
         }
     }
 
+    public void BatBowl(String Calling,String Who)
+    {
+        Bundle bundle=new Bundle();
+        bundle.putStringArrayList("Data",data);
+        Log.d("Sayam",""+data.size()+"BatBowl");
+        bundle.putString("Who",Who);
+        Frag_ScoreCard.setArguments(bundle);
+        fragmentTransaction.show(Frag_ScoreCard).commit();
+    }
+
     private void getData(final String Calling)
     {
         final ArrayList<String> Players= new ArrayList<>();
-        if(data!=null)
-            data.clear();
+
         valueEventListener=new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
@@ -179,6 +200,7 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
                 {
                     Players.add(Snapshot.getKey());
                 }
+                Log.d("Sayam",Players.size()+""+Calling);
             }
 
             @Override
@@ -193,27 +215,11 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
             String Names=Players.get(i);
             data.add(Names);
         }
-        Players.clear();
         Log.d("Sayam",""+data.size());
+        Players.clear();
     }
 
-    public void BatBowl(String Calling,String Who)
-    {
-        getData(Calling);
-        FragmentTransaction fragmentTransaction;
-        FragmentManager fragmentManager;
-        Frag_ScoreCard Frag_ScoreCard;
-        fragmentManager=getSupportFragmentManager();
-        fragmentTransaction=fragmentManager.beginTransaction();
-        Frag_ScoreCard=new Frag_ScoreCard();
-        Bundle bundle=new Bundle();
-        if(data.size()>0)
-             bundle.putStringArrayList("Data",data);
-        bundle.putString("Who",Who);
-        Frag_ScoreCard.setArguments(bundle);
-        fragmentTransaction.add(R.id.ScoreCard,Frag_ScoreCard);
-        fragmentTransaction.commit();
-    }
+
 
     public void NextInnings()
     {
@@ -222,32 +228,36 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
             final Dialog Confirm = new Dialog(context);
             Confirm.setContentView(R.layout.layout_dialog_admin_scorecard_confirm);
             Button Yes = (Button) Confirm.findViewById(R.id.Yes);
+            Confirm.show();
             Yes.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    databaseReference.child("Matches").child(team1 + "Vs" + team2).child("Target").setValue(Integer.valueOf(String.valueOf(Runs.getText())));
-                    Target=Integer.valueOf(String.valueOf(Runs.getText()));
-                    Bat_Bowl.Batting = String.valueOf(Bowling.getText());
-                    Bat_Bowl.Bowling = String.valueOf(Batting.getText());
-                    Batting.setText(Bat_Bowl.Batting);
-                    Bowling.setText(Bat_Bowl.Bowling);
-                    BatsMen1.setText("Choose A BatsMen");
-                    BatsMen2.setText("Choose A BatsMen");
-                    Bowler.setText("Choose A Bowler");
-                    Overs.setText("1");
-                    Runs.setText("");
-                    Wickets.setText("");
-                    Innings = true;
-                    NextInnings.setText("Match Finished");
-                    Confirm.dismiss();
+                        databaseReference.child("Matches").child(team1 + "Vs" + team2).child("Target").setValue(Integer.valueOf(String.valueOf(Runs.getText())));
+                        Target = Integer.valueOf(String.valueOf(Runs.getText()));
+                        Bat_Bowl.Batting = String.valueOf(Bowling.getText());
+                        Bat_Bowl.Bowling = String.valueOf(Batting.getText());
+                        Batting.setText(Bat_Bowl.Batting);
+                        Bowling.setText(Bat_Bowl.Bowling);
+                        BatsMen1.setText("Choose A BatsMen");
+                        BatsMen2.setText("Choose A BatsMen");
+                        Bowler.setText("Choose A Bowler");
+                        Overs.setText("1");
+                        Runs.setText("");
+                        Wickets.setText("");
+                        Innings = true;
+                        NextInnings.setText("Match Finished");
+                        Confirm.dismiss();
                 }
             });
         }else {
+            overs=0;
+            game_plays.clear();
             final Dialog Confirm = new Dialog(context);
             int WonBy;
             Confirm.setContentView(R.layout.layout_dialog_admin_scorecard_confirm);
             final TextView Message = (TextView) Confirm.findViewById(R.id.Message);
             Button Yes = (Button) Confirm.findViewById(R.id.Yes);
+            Confirm.show();
             if (Integer.valueOf(String.valueOf(Runs.getText())) > Target) 
             {
                 WonBy = 15 - Integer.valueOf(String.valueOf(Wickets));
@@ -276,13 +286,12 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
 
     public void NextOver()
     {
-        if(Runs.length()>0 && Runs!=null && overs<=21)
+        if(Runs.length()>0 && Wickets.length()>0 && Runs!=null && overs<=21 && Integer.valueOf(String.valueOf(Wickets.getText()))<16)
         {
-            List<Game_play> game_plays=new ArrayList<>();
             for (int i=0;i<1;i++)
             {
                 Game_play Game_Play=new Game_play();
-                Game_Play.Wickets=String.valueOf(Wickets.getText());
+                Game_Play.Wickets=Integer.valueOf(String.valueOf(Wickets.getText()));
                 Game_Play.Runs=Integer.valueOf(String.valueOf(Runs.getText()));
                 game_plays.add(Game_Play);
             }
@@ -292,11 +301,28 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
                 databaseReference.child("Matches").child(team1+"Vs"+team2).child("2nd Innings").child("Overs").setValue(game_plays);
 
             databaseReference.child("Matches").child(team1+"Vs"+team2).child("COver").setValue(overs);
-            databaseReference.child("Matches").child(team1+"Vs"+team2).child("CRuns").setValue(Runs);
-            databaseReference.child("Matches").child(team1+"Vs"+team2).child("CWickets").setValue(Wickets);
+            databaseReference.child("Matches").child(team1+"Vs"+team2).child("CRuns").setValue(Integer.valueOf(String.valueOf(Runs.getText())));
+            databaseReference.child("Matches").child(team1+"Vs"+team2).child("CWickets").setValue(Integer.valueOf(String.valueOf(Wickets.getText())));
             overs++;
             Overs.setText(String.valueOf(overs));
 
+        }else
+        {
+            final Dialog Confirm=new Dialog(context);
+            Confirm.setContentView(R.layout.layout_dialog_admin_scorecard_confirm);
+            final TextView Message = (TextView) Confirm.findViewById(R.id.Message);
+            Button Yes = (Button) Confirm.findViewById(R.id.Yes);
+            Yes.setText("Sure");
+            Confirm.setCancelable(false);
+            Confirm.show();
+            Message.setText("Please Check if Runs & Wickets are entered properly!!");
+            Yes.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v)
+                {
+                 Confirm.dismiss();
+                }
+            });
         }
     }
 
