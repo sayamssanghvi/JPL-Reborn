@@ -19,12 +19,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sanghvi.jplreborn.Frag_ScoreCard.Frag_Comm {
 
     TextView Overs,Vs,Batting,Bowling,BatsMen1,BatsMen2,Bowler,Choose;
     Button NextOver,NextInnings;
-    private ArrayList<String> data;
+    private ArrayList<String> BatList,BowlList;
     List<Game_play> game_plays;
     EditText Runs,Wickets;
     boolean Innings=false;
@@ -33,13 +34,9 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
     String team1,team2;
     int overs=1,Target;
 
-    FragmentTransaction fragmentTransaction;
-    FragmentManager fragmentManager;
-    Frag_ScoreCard Frag_ScoreCard;
-
-    ValueEventListener valueEventListener;
-    DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    ValueEventListener valueEventListener;
 
     @Override
     protected void onPause()
@@ -68,11 +65,6 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
         firebaseDatabase=FirebaseDatabase.getInstance();
         databaseReference=firebaseDatabase.getReference();
 
-        Frag_ScoreCard=new Frag_ScoreCard();
-        fragmentManager=getSupportFragmentManager();
-        fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.ScoreCard,Frag_ScoreCard);
-
         NextInnings= (Button) findViewById(R.id.NextInnings);
         BatsMen1= (TextView) findViewById(R.id.BatsMen1);
         BatsMen2= (TextView) findViewById(R.id.BatsMen2);
@@ -86,13 +78,14 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
         Runs= (EditText) findViewById(R.id.Runs);
         Vs= (TextView) findViewById(R.id.Vs);
 
+        BatList=new ArrayList<>();
+        BowlList=new ArrayList<>();
+        game_plays=new ArrayList<>();
         team1=getIntent().getStringExtra("Team1");
         team2=getIntent().getStringExtra("Team2");
         Overs.setText(String.valueOf(overs));
         Batting.setText(Bat_Bowl.Batting);
         Bowling.setText(Bat_Bowl.Bowling);
-        data=new ArrayList<>();
-        game_plays=new ArrayList<>();
         Vs.setText(team1+"  "+"Vs"+"  "+team2);
         Choose.setText(Bat_Bowl.Toss +" "+"Won the toss and Choose to"+" "+ Bat_Bowl.Choose);
         NextOver.setOnClickListener(new View.OnClickListener() {
@@ -112,19 +105,17 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
         BatsMen1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
-            {BatBowl(Bat_Bowl.Batting,"BastMen1");}
+            {BatBowl(Bat_Bowl.Batting,"BatsMen1");}
         });
         BatsMen2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {BatBowl(Bat_Bowl.Batting,"BastMen2");
+            public void onClick(View v) {BatBowl(Bat_Bowl.Batting,"BatsMen2");
             }
         });
         Bowler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
-            {
-                getData(Bat_Bowl.Bowling);
-                BatBowl(Bat_Bowl.Bowling,"Bowler");
+            {BatBowl(Bat_Bowl.Bowling,"Bowler");
             }
         });
 
@@ -139,15 +130,15 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
             {
                 case "BatsMen1":
                     BatsMen1.setText(current);
-                    databaseReference.child("Matches").child(team1+"Vs"+team2).child("BatsMen1").setValue(current);
+                    databaseReference.child("Matches").child(team1+"Vs"+team2).child("CBatsMen1").setValue(current);
                     break;
                 case "BatsMen2":
                     BatsMen2.setText(current);
-                    databaseReference.child("Matches").child(team1+"Vs"+team2).child("BatsMen2").setValue(current);
+                    databaseReference.child("Matches").child(team1+"Vs"+team2).child("CBatsMen2").setValue(current);
                     break;
                 case "Bowler":
                     Bowler.setText(current);
-                    databaseReference.child("Matches").child(team1+"Vs"+team2).child("Bowler").setValue(current);
+                    databaseReference.child("Matches").child(team1+"Vs"+team2).child("CBowler").setValue(current);
                     break;
                 default:
 
@@ -166,10 +157,10 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
                     if(RunsWickets.getText()!=null || RunsWickets.getText().length()>0)
                     {
                         if (Who.equals("BatsMen1") || Who.equals("BatsMen2")) {
-                            databaseReference.child("Matches").child(team1 + "Vs" + team2).child(current).child("Runs").setValue(String.valueOf(RunsWickets.getText()));
+                            databaseReference.child("Matches").child(team1 + "Vs" + team2).child(Bat_Bowl.Batting).child(current).child("Runs").setValue(Integer.valueOf(String.valueOf(RunsWickets.getText())));
                             Score.dismiss();
-                        }else {
-                            databaseReference.child("Matches").child(team1 + "Vs" + team2).child(current).child("Wickets").setValue(String.valueOf(RunsWickets.getText()));
+                        }else if(Who.equals("Bowler")){
+                            databaseReference.child("Matches").child(team1 + "Vs" + team2).child(Bat_Bowl.Bowling).child(current).child("Wickets").setValue(Integer.valueOf(String.valueOf(RunsWickets.getText())));
                             Score.dismiss();
                         }
                     }
@@ -180,27 +171,47 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
 
     public void BatBowl(String Calling,String Who)
     {
+        getData(Calling);
+        Frag_ScoreCard Frag_ScoreCard=new Frag_ScoreCard();
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
         Bundle bundle=new Bundle();
-        bundle.putStringArrayList("Data",data);
-        Log.d("Sayam",""+data.size()+"BatBowl");
+        if (Calling.equals(Bat_Bowl.Batting))
+            bundle.putStringArrayList("Data",BatList);
+        else
+            bundle.putStringArrayList("Data",BowlList);
         bundle.putString("Who",Who);
         Frag_ScoreCard.setArguments(bundle);
-        fragmentTransaction.show(Frag_ScoreCard).commit();
+        fragmentTransaction.add(R.id.ScoreCard,Frag_ScoreCard);
+        fragmentTransaction.commit();
     }
 
     private void getData(final String Calling)
     {
-        final ArrayList<String> Players= new ArrayList<>();
-
         valueEventListener=new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
             {
+                if(BatList.size()>0 )
+                    BatList.clear();
+                if(BowlList.size()>0)
+                    BowlList.clear();
+                List<String> Players=new ArrayList<>();
                 for(DataSnapshot Snapshot:dataSnapshot.child("Teams").child(Calling).getChildren())
                 {
                     Players.add(Snapshot.getKey());
                 }
-                Log.d("Sayam",Players.size()+""+Calling);
+
+                for (int i=0;i<Players.size();i++)
+                {
+                    String Names=Players.get(i);
+                    if (Calling.equals(Bat_Bowl.Bowling))
+                        BowlList.add(Names);
+                    else
+                        BatList.add(Names);
+                }
+                Log.d("Sayam",""+Calling+BatList+"    "+BowlList);
+                Players.clear();
             }
 
             @Override
@@ -208,18 +219,9 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
             {
 
             }
-        };databaseReference.addValueEventListener(valueEventListener);
-
-        for (int i=0;i<Players.size();i++)
-        {
-            String Names=Players.get(i);
-            data.add(Names);
-        }
-        Log.d("Sayam",""+data.size());
-        Players.clear();
+        };
+        databaseReference.addValueEventListener(valueEventListener);
     }
-
-
 
     public void NextInnings()
     {

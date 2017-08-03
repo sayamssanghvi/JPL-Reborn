@@ -61,7 +61,7 @@ public class SearchActivity extends AppCompatActivity implements com.zodiac.sang
         firebaseDatabase=FirebaseDatabase.getInstance();
         databaseReference=firebaseDatabase.getReference().child("Players");
 
-        SearchBarFuntion();
+        SearchBarFunction();
 }
 
 
@@ -94,7 +94,7 @@ public class SearchActivity extends AppCompatActivity implements com.zodiac.sang
         return images;
     }
 
-    public void SearchBarFuntion(){
+    public void SearchBarFunction(){
         SearchBar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

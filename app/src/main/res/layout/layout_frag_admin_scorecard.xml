@@ -2,13 +2,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorPrimary"
     android:padding="16dp">
 
 <android.support.v7.widget.RecyclerView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/Player_Rv">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/Player_Rv"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="5dp"
+    android:layout_below="@+id/Team_Name">
 </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/Team_Name"
+        android:textColor="#f8f8f9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:textSize="28sp"
+        android:text="Teams" />
 
 </RelativeLayout>

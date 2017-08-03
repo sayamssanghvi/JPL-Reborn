@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -17,13 +19,18 @@ import java.util.List;
 public class Player_Adapter extends RecyclerView.Adapter<Player_Adapter.Player_ViewHolder>
 {
     private LayoutInflater inflater;
-    private List<String> data= Collections.emptyList();
+    private ArrayList<String> data=new ArrayList<>();
     private Player_Comm player_comm;
 
-    public Player_Adapter(Context context,List<String> data)
+    public Player_Adapter(Context context,ArrayList<String> data)
     {
         this.data=data;
         this.inflater=LayoutInflater.from(context);
+    }
+
+    public void setItemClicked(Player_Comm player_comm)
+    {
+        this.player_comm=player_comm;
     }
 
     @Override
@@ -40,41 +47,34 @@ public class Player_Adapter extends RecyclerView.Adapter<Player_Adapter.Player_V
         holder.PName.setText(current);
     }
 
-    public void setItemClicked(Player_Comm player_comm)
-    {
-        this.player_comm=player_comm;
-    }
-
     @Override
     public int getItemCount()
     {
             return data.size();
     }
 
-    class Player_ViewHolder extends RecyclerView.ViewHolder
+    class Player_ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,View.OnLongClickListener
     {
         TextView PName;
 
-        public Player_ViewHolder(View itemView)
+        Player_ViewHolder(View v)
         {
-            super(itemView);
-            PName= (TextView) itemView.findViewById(R.id.PlayerName);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v)
-                {
-                    player_comm.ItemClicked(getAdapterPosition());
-                }
-            });
+            super(v);
+            PName= (TextView) v.findViewById(R.id.Player_Name);
+            itemView.setOnClickListener(this);
+            itemView.setOnLongClickListener(this);
+        }
 
-            itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v)
-                {
-                    player_comm.ItemLongClicked(getAdapterPosition());
-                    return true;
-                }
-            });
+        @Override
+        public void onClick(View v)
+        {
+            player_comm.ItemClicked(getAdapterPosition());
+        }
+
+        @Override
+        public boolean onLongClick(View v) {
+            player_comm.ItemLongClicked(getAdapterPosition());
+            return true;
         }
     }
 
