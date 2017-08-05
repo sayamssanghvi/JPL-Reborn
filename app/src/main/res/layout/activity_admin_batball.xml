@@ -8,13 +8,13 @@
     android:padding="16dp"
     tools:context="com.zodiac.sanghvi.jplreborn.Admin_BatBall">
 <android.support.v7.widget.CardView
-    android:layout_width="150dp"
-    android:layout_height="180dp"
+    android:layout_width="130dp"
+    android:layout_height="160dp"
     app:cardCornerRadius="10dp"
+    android:id="@+id/Team1"
     android:layout_alignTop="@+id/Team2"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:id="@+id/Team1">
+    android:layout_marginLeft="14dp"
+    android:layout_marginStart="14dp">
     <ImageButton
         android:id="@+id/img_team1"
         android:layout_width="match_parent"
@@ -30,13 +30,15 @@
     app:cardCornerRadius="10dp"
     android:layout_alignParentRight="true"
     android:layout_alignParentEnd="true"
+    android:layout_marginRight="14dp"
+    android:layout_marginEnd="14dp"
     android:id="@+id/Team2">
+
     <ImageButton
         android:id="@+id/img_team2"
-        android:layout_width="150dp"
-        android:layout_height="180dp"
-        app:srcCompat="@drawable/apps"
-        />
+        android:layout_width="130dp"
+        android:layout_height="160dp"
+        app:srcCompat="@drawable/apps" />
 </android.support.v7.widget.CardView>
 
 
@@ -76,28 +78,44 @@
         android:layout_alignStart="@+id/Team2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="45dp"
+    app:cardCornerRadius="10dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true">
     <Button
         android:id="@+id/Start"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/Red"
         android:textColor="#f8f8f9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:clickable="false"
-        android:layout_marginBottom="45dp"
+        android:enabled="false"
         android:text="Start" />
+</android.support.v7.widget.CardView>
+
 
     <TextView
         android:id="@+id/textView3"
         android:gravity="center"
         android:textColor="#f8f8f9"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="72dp"
         android:textSize="18sp"
         android:text="Choose the Team who Won the Toss" />
+
+    <View
+        android:layout_height="2dp"
+        android:layout_width="match_parent"
+        android:background="#f8f8f9"
+        android:layout_below="@id/textView3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3" />
+
 </RelativeLayout>

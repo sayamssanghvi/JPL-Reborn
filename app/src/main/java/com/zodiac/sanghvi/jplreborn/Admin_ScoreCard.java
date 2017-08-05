@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -19,7 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sanghvi.jplreborn.Frag_ScoreCard.Frag_Comm {
 
@@ -38,20 +36,11 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
     DatabaseReference databaseReference;
     ValueEventListener valueEventListener;
 
-    @Override
-    protected void onPause()
-    {
-        super.onPause();
-        SaveDataMethod();
-    }
 
     @Override
     public void onBackPressed()
     {
-        super.onBackPressed();
         SaveDataMethod();
-        if (MatchOver[0])
-            finish();
     }
 
     @Override
@@ -105,17 +94,17 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
         BatsMen1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
-            {BatBowl(Bat_Bowl.Batting,"BatsMen1");}
+            {Frag_Call(Bat_Bowl.Batting,"BatsMen1");}
         });
         BatsMen2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {BatBowl(Bat_Bowl.Batting,"BatsMen2");
+            public void onClick(View v) {Frag_Call(Bat_Bowl.Batting,"BatsMen2");
             }
         });
         Bowler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
-            {BatBowl(Bat_Bowl.Bowling,"Bowler");
+            {Frag_Call(Bat_Bowl.Bowling,"Bowler");
             }
         });
 
@@ -124,6 +113,8 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
     @Override
     public void ItemUsed(final String current, final String Who, String Clicked)
     {
+        NextOver.setVisibility(View.VISIBLE);
+        NextInnings.setVisibility(View.VISIBLE);
         if (Clicked.equals("Clicked"))
         {
             switch (Who)
@@ -169,8 +160,10 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
         }
     }
 
-    public void BatBowl(String Calling,String Who)
+    public void Frag_Call(String Calling,String Who)
     {
+        NextInnings.setVisibility(View.INVISIBLE);
+        NextOver.setVisibility(View.INVISIBLE);
         getData(Calling);
         Frag_ScoreCard Frag_ScoreCard=new Frag_ScoreCard();
         FragmentManager fragmentManager=getSupportFragmentManager();
@@ -210,7 +203,6 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
                     else
                         BatList.add(Names);
                 }
-                Log.d("Sayam",""+Calling+BatList+"    "+BowlList);
                 Players.clear();
             }
 
@@ -229,7 +221,7 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
         {
             final Dialog Confirm = new Dialog(context);
             Confirm.setContentView(R.layout.layout_dialog_admin_scorecard_confirm);
-            Button Yes = (Button) Confirm.findViewById(R.id.Yes);
+            TextView Yes = (TextView) Confirm.findViewById(R.id.Yes);
             Confirm.show();
             Yes.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -258,7 +250,7 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
             int WonBy;
             Confirm.setContentView(R.layout.layout_dialog_admin_scorecard_confirm);
             final TextView Message = (TextView) Confirm.findViewById(R.id.Message);
-            Button Yes = (Button) Confirm.findViewById(R.id.Yes);
+            TextView Yes = (TextView) Confirm.findViewById(R.id.Yes);
             Confirm.show();
             if (Integer.valueOf(String.valueOf(Runs.getText())) > Target) 
             {
@@ -313,7 +305,7 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
             final Dialog Confirm=new Dialog(context);
             Confirm.setContentView(R.layout.layout_dialog_admin_scorecard_confirm);
             final TextView Message = (TextView) Confirm.findViewById(R.id.Message);
-            Button Yes = (Button) Confirm.findViewById(R.id.Yes);
+            TextView Yes = (TextView) Confirm.findViewById(R.id.Yes);
             Yes.setText("Sure");
             Confirm.setCancelable(false);
             Confirm.show();
@@ -333,15 +325,16 @@ public class Admin_ScoreCard extends AppCompatActivity implements  com.zodiac.sa
         final Dialog Confirm=new Dialog(context);
         Confirm.setContentView(R.layout.layout_dialog_admin_scorecard_confirm);
         TextView Message= (TextView) Confirm.findViewById(R.id.Message);
-        Button Yes= (Button) Confirm.findViewById(R.id.Yes);
+        TextView Yes= (TextView) Confirm.findViewById(R.id.Yes);
         Message.setText("Are you sure you  want to QUIT the MATCH?");
         Yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
-                MatchOver[0] =true;
                 Confirm.dismiss();
+                finish();
             }
         });
+        Confirm.show();
     }
 }

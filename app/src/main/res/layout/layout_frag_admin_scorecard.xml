@@ -10,7 +10,7 @@
     android:layout_height="match_parent"
     android:id="@+id/Player_Rv"
     android:layout_centerHorizontal="true"
-    android:layout_marginTop="5dp"
+    android:layout_marginTop="6dp"
     android:layout_below="@+id/Team_Name">
 </android.support.v7.widget.RecyclerView>
 
@@ -24,5 +24,15 @@
         android:layout_marginTop="21dp"
         android:textSize="28sp"
         android:text="Teams" />
+    <View
+        android:layout_height="2dp"
+        android:layout_centerHorizontal="true"
 
+        android:layout_width="match_parent"
+        android:background="#f8f8f9"
+        android:layout_below="@id/Team_Name"
+        android:layout_alignLeft="@+id/Team_Name"
+        android:layout_alignStart="@+id/Team_Name"
+        android:layout_alignRight="@+id/Team_Name"
+        android:layout_alignEnd="@+id/Team_Name" />
 </RelativeLayout>

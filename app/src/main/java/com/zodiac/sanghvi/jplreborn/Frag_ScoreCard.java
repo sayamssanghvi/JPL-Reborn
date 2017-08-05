@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +55,6 @@ public class Frag_ScoreCard extends Fragment implements com.zodiac.sanghvi.jplre
     @Override
     public void ItemClicked(int position)
     {
-        Log.d("Sayam","Position"+position);
         current=data.get(position);
         close("Clicked");
     }
@@ -64,14 +62,12 @@ public class Frag_ScoreCard extends Fragment implements com.zodiac.sanghvi.jplre
     @Override
     public void ItemLongClicked(int position)
     {
-        Log.d("Sayam","Position"+position);
         current=data.get(position);
         close("LongClicked");
     }
 
     public void close(String Clicked)
     {
-        Log.d("Sayam","Position");
         frag_Comm.ItemUsed(current,getData.getString("Who"),Clicked);
         getActivity().getSupportFragmentManager().beginTransaction().detach(this).remove(this).commit();
     }

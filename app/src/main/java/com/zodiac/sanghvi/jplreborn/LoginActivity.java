@@ -1,9 +1,10 @@
 package com.zodiac.sanghvi.jplreborn;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Button;
 public class LoginActivity extends AppCompatActivity {
 
     private Button Audience,Admin;
+    Context context;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -40,5 +42,14 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+
+    private void Dialog_Call()
+    {
+        Dialog dialog=new Dialog(context);
+        dialog.setCancelable(false);
+        dialog.setContentView(R.layout.layout_dialog_login_password);
+
+        dialog.show();
     }
 }

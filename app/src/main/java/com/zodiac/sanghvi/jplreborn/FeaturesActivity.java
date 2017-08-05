@@ -28,9 +28,8 @@ import java.util.List;
 public class FeaturesActivity extends AppCompatActivity implements Search_Adapter.Communicator {
 
     private FirebaseDatabase firebase;
-    private DatabaseReference databaseReference,db;
+    private DatabaseReference databaseReference;
     private ValueEventListener valueeventlistener;
-    private Bitmap images;
     private List<Player> data=new ArrayList<>();
     private RecyclerView Display_RV;
     private Search_Adapter Query_Adapter;
@@ -59,7 +58,6 @@ public class FeaturesActivity extends AppCompatActivity implements Search_Adapte
             Title.setText("Top Ranking(Runs)");
             firebase=FirebaseDatabase.getInstance();
             databaseReference=firebase.getReference().child("Players");
-            db=firebase.getReference();
             Display_RV= (RecyclerView) findViewById(R.id.Display_RV);
 
             Toast.makeText(this, "Runs Scored"+getBaseContext(), Toast.LENGTH_SHORT).show();
@@ -79,8 +77,7 @@ public class FeaturesActivity extends AppCompatActivity implements Search_Adapte
                     {
                         Player current = new Player();
                         Player_Stats PStats = dataSnapshot.child(Names.get(i)).getValue(Player_Stats.class);
-                        Bitmap IMG = DisplayPic(PStats.getImg());
-                        current.Img = IMG;
+                        current.Img = PStats.getImg();
                         current.Name = PStats.getName();
                         current.TeamName = PStats.getTeamName();
                         data.add(current);
@@ -106,12 +103,11 @@ public class FeaturesActivity extends AppCompatActivity implements Search_Adapte
 
             firebase=FirebaseDatabase.getInstance();
             databaseReference=firebase.getReference().child("Players");
-            db=firebase.getReference();
             Display_RV= (RecyclerView) findViewById(R.id.Display_RV);
 
-
-            Query MostRuns=databaseReference.orderByChild("Runs");
-            valueeventlistener = new ValueEventListener() {
+            Query MostWickets=databaseReference.orderByChild("Wickets");
+            valueeventlistener = new ValueEventListener()
+            {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -125,8 +121,7 @@ public class FeaturesActivity extends AppCompatActivity implements Search_Adapte
                     {
                         Player current = new Player();
                         Player_Stats PStats = dataSnapshot.child(Names.get(i)).getValue(Player_Stats.class);
-                        Bitmap IMG = DisplayPic(PStats.getImg());
-                        current.Img = IMG;
+                        current.Img =PStats.getImg();
                         current.Name = PStats.getName();
                         current.TeamName = PStats.getTeamName();
                         data.add(current);
@@ -141,7 +136,7 @@ public class FeaturesActivity extends AppCompatActivity implements Search_Adapte
                 public void onCancelled(DatabaseError databaseError) {
                 }
             };
-            MostRuns.addValueEventListener(valueeventlistener);
+            MostWickets.addValueEventListener(valueeventlistener);
         }
         else if(CheckLayout==4)
         {
@@ -149,29 +144,6 @@ public class FeaturesActivity extends AppCompatActivity implements Search_Adapte
             setContentView(R.layout.layout_features);
             Toast.makeText(this, "Valuable Player", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    public Bitmap DisplayPic(String S)
-    {
-        Picasso.with(getBaseContext()).load(S).resize(75,75).into(new Target() {
-            @Override
-            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from)
-            {
-                images=bitmap;
-
-            }
-
-            @Override
-            public void onBitmapFailed(Drawable errorDrawable) {}
-
-            @Override
-            public void onPrepareLoad(Drawable placeHolderDrawable)
-            {
-
-            }
-        });
-
-        return images;
     }
 
     public List<Player> getdata(List<Player> data)

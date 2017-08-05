@@ -27,14 +27,20 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp" />
 
-    <Button
+
+    <TextView
         android:id="@+id/Yes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/Message"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="30dp"
+        android:background="#f8f8f9"
+        android:textColor="#000000"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="30dp"
         android:text="Yes"
-        android:background="#f8f8f9"/>
+        android:layout_below="@+id/Message"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

@@ -1,19 +1,19 @@
 package com.zodiac.sanghvi.jplreborn;
 
 import android.graphics.Bitmap;
+import android.widget.ImageView;
+
 /**
  * Created by Sanghvi on 6/9/17.
  */
 public class Player
 {
-    String Name, TeamName;
-    Bitmap Img;
+    String Name,TeamName,Img;
 }
 
 class Match
 {
-    String Team1,Team2;
-    Bitmap Img_Team1,Img_Team2;
+    String Team1,Team2,Img_Team1,Img_Team2;
 }
 
 class Player_Stats

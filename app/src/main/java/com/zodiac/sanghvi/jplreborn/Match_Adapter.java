@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -20,11 +22,13 @@ public class Match_Adapter extends RecyclerView.Adapter<Match_Adapter.Match_View
     private List<Match> data= Collections.emptyList();
     private LayoutInflater inflater;
     private Match_Comm match_comm;
+    private Context context;
 
     public Match_Adapter(Context context,List<Match> data )
     {
         this.inflater=LayoutInflater.from(context);
         this.data=data;
+        this.context=context;
     }
 
     @Override
@@ -46,8 +50,8 @@ public class Match_Adapter extends RecyclerView.Adapter<Match_Adapter.Match_View
         Match current=data.get(position);
         holder.Team1.setText(current.Team1);
         holder.Team2.setText(current.Team2);
-        holder.Img_Team1.setImageBitmap(current.Img_Team1);
-        holder.Img_Team2.setImageBitmap(current.Img_Team2);
+        Picasso.with(context).load(current.Img_Team1).resize(90,120).into(holder.Img_Team1);
+        Picasso.with(context).load(current.Img_Team2).resize(90,120).into(holder.Img_Team2);
     }
 
     @Override

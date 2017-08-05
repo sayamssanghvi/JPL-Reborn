@@ -1,21 +1,20 @@
 package com.zodiac.sanghvi.jplreborn;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
+
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,13 +25,16 @@ public class Admin_MatchList extends AppCompatActivity implements Match_Adapter.
     List<Match> data= new ArrayList<>();
     boolean isRvOpen=false;
     TextView MainText;
-    Bitmap images;
+    ImageView Expand;
 
-    RecyclerView RecyclerView;
+    RelativeLayout Day1,Day2,Day3,Day4,Day5,Day6,Day7;
     Match_Adapter Match_adapter;
-    RelativeLayout Day1,Day2,Day3,Day4,Day5;
+    RecyclerView RecyclerView;
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    ValueEventListener valueEventListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -40,14 +42,20 @@ public class Admin_MatchList extends AppCompatActivity implements Match_Adapter.
         setContentView(R.layout.activity_admin_matchlist);
 
 
+        firebaseDatabase=FirebaseDatabase.getInstance();
+        databaseReference=firebaseDatabase.getReference().child("Dates");
 
         Day1= (RelativeLayout) findViewById(R.id.Day_1);
         Day2= (RelativeLayout) findViewById(R.id.Day_2);
         Day3= (RelativeLayout) findViewById(R.id.Day_3);
         Day4= (RelativeLayout) findViewById(R.id.Day_4);
         Day5= (RelativeLayout) findViewById(R.id.Day_5);
+        Day6= (RelativeLayout) findViewById(R.id.Day_6);
+        Day7= (RelativeLayout) findViewById(R.id.Day_7);
 
         MainText= (TextView) findViewById(R.id.MainTextView);
+
+        Expand= (ImageView) findViewById(R.id.Expand_Img);
 
         RecyclerView= (android.support.v7.widget.RecyclerView) findViewById(R.id.Match_Rv);
 
@@ -62,7 +70,7 @@ public class Admin_MatchList extends AppCompatActivity implements Match_Adapter.
         Day2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             MainText.setText("02/07/2016");
+             MainText.setText("02/07/2017");
              CallRv(2);
             }
         });
@@ -70,7 +78,7 @@ public class Admin_MatchList extends AppCompatActivity implements Match_Adapter.
         Day3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainText.setText("09/07/2016");
+                MainText.setText("09/07/2017");
                 CallRv(3);
             }
         });
@@ -78,7 +86,7 @@ public class Admin_MatchList extends AppCompatActivity implements Match_Adapter.
         Day4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainText.setText("16/07/2016");
+                MainText.setText("16/07/2017");
                 CallRv(4);
             }
         });
@@ -86,10 +94,11 @@ public class Admin_MatchList extends AppCompatActivity implements Match_Adapter.
         Day5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainText.setText("25/07/2016");
+                MainText.setText("25/07/2017");
                 CallRv(5);
             }
         });
+
     }
 
     public void SetRv(int Day)
@@ -107,42 +116,23 @@ public class Admin_MatchList extends AppCompatActivity implements Match_Adapter.
         if(!isRvOpen)
         {
             SetRv(Day);
+            Expand.setImageResource(R.drawable.expand_less);
             Day2.setVisibility(View.INVISIBLE);
             Day3.setVisibility(View.INVISIBLE);
             Day4.setVisibility(View.INVISIBLE);
             Day5.setVisibility(View.INVISIBLE);
         }else
         {
+            Expand.setImageResource(R.drawable.expand_more);
             RecyclerView.setVisibility(View.GONE);
             data.clear();
-            MainText.setText("25/06/2016");
+            MainText.setText("Semi-Finals");
             Day2.setVisibility(View.VISIBLE);
             Day3.setVisibility(View.VISIBLE);
             Day4.setVisibility(View.VISIBLE);
             Day5.setVisibility(View.VISIBLE);
             isRvOpen=false;
         }
-    }
-
-    public Bitmap DisplayPic(String S)
-    {
-        Picasso.with(getBaseContext()).load(S).resize(90,120).into(new Target() {
-            @Override
-            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from)
-            {
-                images=bitmap;
-            }
-
-            @Override
-            public void onBitmapFailed(Drawable errorDrawable) {}
-
-            @Override
-            public void onPrepareLoad(Drawable placeHolderDrawable)
-            {
-            }
-        });
-
-        return images;
     }
 
     public List<Match> getData(int Day)
@@ -204,8 +194,8 @@ public class Admin_MatchList extends AppCompatActivity implements Match_Adapter.
             Match current=new Match();
             current.Team1=Team1[i];
             current.Team2=Team2[i];
-            current.Img_Team1=DisplayPic(Img_Team1[i]);
-            current.Img_Team2=DisplayPic(Img_Team2[i]);
+            current.Img_Team1=Img_Team1[i];
+            current.Img_Team2=Img_Team2[i];
             data.add(current);
         }
         return data;
@@ -216,7 +206,6 @@ public class Admin_MatchList extends AppCompatActivity implements Match_Adapter.
     {
         String Team1=data.get(position).Team1;
         String Team2=data.get(position).Team2;
-        Log.d("Sayam","Clicked"+position);
         Intent i=new Intent(this,Admin_BatBall.class);
         i.putExtra("Team1",Team1);
         i.putExtra("Team2",Team2);

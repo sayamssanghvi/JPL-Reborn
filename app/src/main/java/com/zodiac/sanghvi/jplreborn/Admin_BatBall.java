@@ -5,10 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -59,8 +57,8 @@ public class Admin_BatBall extends AppCompatActivity
             {
                 String img1=dataSnapshot.child("Teams").child(team1).child("Img").getValue(String.class);
                 String img2=dataSnapshot.child("Teams").child(team2).child("Img").getValue(String.class);
-                Picasso.with(getBaseContext()).load(img1).into(Img_Team1);
-                Picasso.with(getBaseContext()).load(img2).into(Img_Team2);
+                Picasso.with(getBaseContext()).load(img1).resize(440,500).into(Img_Team1);
+                Picasso.with(getBaseContext()).load(img2).resize(440,500).into(Img_Team2);
             }
             @Override
             public void onCancelled(DatabaseError databaseError)
@@ -70,7 +68,7 @@ public class Admin_BatBall extends AppCompatActivity
         };
         databaseReference.addValueEventListener(valueEventListener);
 
-        Start.setClickable(false);
+        Start.setEnabled(false);
         Start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,23 +110,19 @@ public class Admin_BatBall extends AppCompatActivity
         Batting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Start.setClickable(true);
+                Start.setEnabled(true);
                 if (Team.equals(team1))
                 {
                     bat_bowl.Batting = team1;
                     bat_bowl.Bowling = team2;
-                    Log.d("Sayam",""+bat_bowl.Batting);
-                    Log.d("Sayam",""+bat_bowl.Bowling);
                 }else
                 {
                     bat_bowl.Batting = team2;
                     bat_bowl.Bowling = team1;
-                    Log.d("Sayam",""+bat_bowl.Batting);
-                    Log.d("Sayam",""+bat_bowl.Bowling);
                 }
                 bat_bowl.Toss=Team;
                 bat_bowl.Choose="Batting";
-                Start.setBackgroundResource(R.color.colorPrimary);
+                Start.setBackgroundResource(R.color.Green);
                 databaseReference.child("Matches").child(team1+"Vs"+team2).child("Toss").setValue(Team);
                 databaseReference.child("Matches").child(team1+"Vs"+team2).child("Choose").setValue("Batting");
                 Check = true;
@@ -140,23 +134,19 @@ public class Admin_BatBall extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Start.setClickable(true);
+                Start.setEnabled(true);
                 if (Team.equals(team1))
                 {
                     bat_bowl.Batting = team2;
                     bat_bowl.Bowling = team1;
-                    Log.d("Sayam",""+bat_bowl.Batting);
-                    Log.d("Sayam",""+bat_bowl.Bowling);
                 }else
                 {
                     bat_bowl.Batting = team1;
                     bat_bowl.Bowling = team2;
-                    Log.d("Sayam",""+bat_bowl.Batting);
-                    Log.d("Sayam",""+bat_bowl.Bowling);
                 }
                 bat_bowl.Toss=Team;
                 bat_bowl.Choose="Bowling";
-                Start.setBackgroundResource(R.color.ButtonColour);
+                Start.setBackgroundResource(R.color.Green);
                 databaseReference.child("Matches").child(team1+"Vs"+team2).child("Toss").setValue(Team);
                 databaseReference.child("Matches").child(team1+"Vs"+team2).child("Choose").setValue("Bowling");
                 Check = true;

@@ -151,4 +151,56 @@
         android:layout_alignParentStart="true">
 
     </android.support.v7.widget.RecyclerView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Day_7"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/Day_6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:id="@+id/texiw8"
+            android:textColor="#f8f8f9"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="Finals" />
+        <ImageView
+            android:id="@+id/Epad_Img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/expand_more"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/Day_6"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/Day_5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    <TextView
+        android:id="@+id/texie8"
+        android:textColor="#f8f8f9"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Semi-Finals" />
+    <ImageView
+        android:id="@+id/Epand_mg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/expand_more"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>
 </RelativeLayout>

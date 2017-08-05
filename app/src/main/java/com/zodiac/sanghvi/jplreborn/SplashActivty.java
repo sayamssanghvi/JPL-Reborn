@@ -10,10 +10,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.ViewAnimationUtils;
 import android.widget.ImageView;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -31,7 +29,6 @@ public class SplashActivty extends Activity {
         firebaseDatabase=FirebaseDatabase.getInstance();
         databaseReference=firebaseDatabase.getReference();
         databaseReference.child("Matches").child("JD Vs Sultan").child("Choose").setValue("Batting");
-        Log.d("Sayam","Worked");
 
         if(isNetworkAvailable())
         {

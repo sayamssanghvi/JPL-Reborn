@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -21,10 +23,12 @@ public class Search_Adapter extends RecyclerView.Adapter<Search_Adapter.SearchVi
     private LayoutInflater inflater;
     private List<Player> data = Collections.emptyList();
     private Communicator communicator;
+    private Context context;
 
     public Search_Adapter(Context context, List<Player> data) {
         this.data = data;
         this.inflater = LayoutInflater.from(context);
+        this.context=context;
     }
 
     public void setCommunicator(Communicator communicator)
@@ -43,7 +47,7 @@ public class Search_Adapter extends RecyclerView.Adapter<Search_Adapter.SearchVi
         Player current = data.get(position);
         holder.TeamName.setText(current.TeamName);
         holder.PName.setText(current.Name);
-        holder.PImg.setImageBitmap(current.Img);
+        Picasso.with(context).load(current.Img).resize(75,75).into(holder.PImg);
     }
 
     @Override
